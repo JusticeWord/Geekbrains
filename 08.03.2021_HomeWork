@@ -1,0 +1,59 @@
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char** args)
+{
+    int a = 1;
+    int b = 2;   
+    int i;
+    int simple = 13;
+
+    const int c = 5;
+    const int d = 4;
+
+    int year;
+
+    if(a + b >= 10 && a + b <= 20)
+        cout << "True" << endl;
+    else
+        cout << "False" << endl;
+
+    cout << "Введите число: ";
+    cin >> simple;
+
+    if(simple == 1 || simple == 2)
+        cout << "Yes";
+    else if(simple <= 0)
+        cout << "No";
+    else
+    {
+        for(i = 2; i <= simple / 2; i++)
+        {
+            if (simple % i == 0)
+            {
+                b = -1;
+                break;
+            }
+        }
+        
+        if(b == -1)
+            cout << "No";
+        else
+            cout << "Yes";
+    } 
+
+    if((c == 10 || d == 10) || c + d == 10)
+    {
+        cout << "istina!";
+    }
+
+    cout << "Введите год: ";
+    cin >> year;
+
+    if((year % 4 == 0 && (year % 100) != 0) || (year % 400 == 0))
+        cout << "Високосный";
+    else
+        cout << "Не високосный";
+
+}
