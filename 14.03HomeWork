@@ -1,0 +1,40 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+
+using namespace std;
+
+char buff[200];
+
+int glue (ifstream &part1, ifstream &part2)
+{   
+    ofstream full ("Full.txt");
+
+    part1.getline(buff, 77);
+    full << buff;
+
+    part2.getline(buff, 106);
+    full << buff;
+
+    full.close();
+
+    return(0);
+}
+
+int main(int argc, char *argv[])
+{
+    ofstream opart1 ("Part_1.txt");
+    ofstream opart2 ("Part_2.txt");
+    
+    opart1 << "Немного знали древние о мире, который каждый день прервать пытался судьбы их ";
+    opart2 << "Но знали же друг друга, без масок знали, знали кто на что пойдёт и что в жертву принесёт в последнюю минуту рока";
+    
+    opart1.close();
+    opart2.close();
+
+    ifstream ipart1 ("Part_1.txt");
+    ifstream ipart2 ("Part_2.txt");
+
+    glue(ipart1, ipart2);
+
+}
