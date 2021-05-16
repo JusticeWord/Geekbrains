@@ -31,7 +31,7 @@ int toRecDegree(int a, int b) {
     if (b == 0)
         return (1);
     
-    d = toRecDegree(a, b / 2);
+    d = toDegree(a, b / 2);
     
     if (b % 2 == 0)
         return (d * d);
